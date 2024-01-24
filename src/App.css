@@ -1,4 +1,5 @@
-.App {
+
+/* .App {
   text-align: center;
 }
 
@@ -33,6 +34,656 @@
     transform: rotate(0deg);
   }
   to {
+    tansform: rotate(360deg);
+  }
+} */
+
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+html,body{
+  background-color:#f2f2f2;
+  font-family: 'Open Sans', sans-serif,'Roboto Mono', monospace;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+/* body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+  main{
+    flex: 1;
+  } */
+
+ .welcome-img{
+  max-height: 50% ;
+  width: 100%;
+  object-fit: cover;
+ }
+ main{
+  flex-grow: 1;
+ }
+ .welcome-footer{
+  max-width: 100%;
+  background-color: #f8f8f8;
+  padding: 10px 0;
+  margin-top: 1.5rem;
+  border: 1px solid #ffcc80;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  color: #f7ab39;
+  font-weight: 900;
+   margin-top: 350vh ;
+ }
+ .user-admin{
+  border: 2px solid black;
+  margin-top: 1rem;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: #ffd699 ;
+  box-shadow: 2px 2px 2px black;
+  margin-bottom: 21vh;
+
+ }
+ .user-admin button{
+  font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto Mono', monospace;
+font-size: 1.5rem;
+font-weight: bold;
+padding: .5rem 2rem;
+box-shadow: 5px 5px 5px black;
+border-radius: 1rem;
+ }
+ .user-admin button:hover{
+  background-color: black;
+  color: whitesmoke;
+ }
+  .header-img-user{
+    display: flex;
+  }
+  .header-img-user img{
+    height: 50vh;
+    width: 100%;
+    /* object-fit: contain; */
+  }
+   
+.singup-login-msg{
+  border: 1px solid #ffd699 ;
+  background-color: #ffd699;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 5vh;
+  gap: .5rem;
+box-shadow: 2px 2px 2px black;
+padding: 0 .5rem;
+}
+.full-pizza{
+  animation:  4s linear .5s  infinite normal forwards icon-spin;
+}
+@keyframes icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
     transform: rotate(360deg);
   }
 }
+  .user-signup-input{
+    border: 1px solid #ffd699 ;
+    background-color: #ffd699;
+    margin-top: 1rem;
+    height: 40vh;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 1rem;
+    gap: 1rem;
+  }
+  .user-signup-input input{
+     height: 1.5rem;
+     width: 50vh;
+     border-radius: .5rem;
+     outline: none;
+     padding-left: 5px;
+
+     
+  }
+.user-signup-input button{
+  font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto Mono', monospace;
+font-size: 1rem;
+font-weight: bold;
+padding: .5rem 2rem;
+box-shadow: 5px 5px 5px black;
+border-radius: 1rem;
+}
+.user-signup-input button:hover{
+  background-color: black;
+  color: whitesmoke;
+ }
+.forget-msg{
+  border: 1px solid #ffd699;
+  background-color: #ffd699;
+  height: 13vh;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  padding: .7rem;
+  margin-top: 2rem;
+  box-shadow: 1px 1px 1px black;
+  text-align: center;
+}
+.reset-success-msg{
+  border: 1px solid #ffd699;
+  background-color: #ffd699;
+  height: 10vh;
+  margin: 0 auto; 
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  width: 80%;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 2px black;
+}
+
+
+/* Content */
+
+
+.search-input{
+  border-radius: 1rem;
+}
+
+
+.user-home-header {
+  border:  1px solid #f7ab39;
+  background-color: #ffcc80;
+  display: flex;
+  justify-content: space-evenly;
+  padding: .5rem 0;
+  max-width: 100%;
+
+  label{
+padding-left: .5rem;
+  }
+.search-input{
+  padding-left: .5rem;
+  outline: none;
+  width: 30vw;
+}
+.delivery-div{
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+}
+.home-menu{
+  display: flex;
+  margin: 1rem;
+  flex-wrap: wrap;
+
+}
+.user-menu {
+  flex: 0 0 calc(25% - 20px);
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+position: relative;
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+     
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  } 
+  .cart-btn{
+    padding: .4rem;
+    border-radius: .8rem;
+    font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto Mono', monospace;
+font-weight: bold;
+box-shadow: 2px 2px 2px black;
+ position: absolute;
+ bottom: 1rem;
+ right: 1rem;
+ &:hover{
+  background-color: black;
+  color: whitesmoke;
+}
+  }
+}
+
+
+.header-pages{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #ccc;
+  padding: .5rem 0;
+  margin-bottom: 1.5rem;
+}
+.header-pages a:hover,
+a:active {
+  font-weight: bolder;
+}
+.header-pages a:visited{
+  text-decoration: none;
+  color: inherit;
+}
+.header-pages a {
+  text-decoration: none;
+}
+.menu-heading {
+  border:1px solid #ffcc80;
+  background-color: #ffcc80;
+  display: inline;
+  border-radius: 1rem;
+  padding : .5rem;
+  margin: 0 .8rem;
+}
+.cart-div{
+  padding: 2vh;
+  margin: 1rem 0;
+}
+ .cart-empty-main {
+  display: flex;
+  justify-content: center;
+ }
+.cart-empty {
+  border:1px solid #ffcc80;
+  height: 20vh;
+  width: 60vw;
+  margin-top: 5vh;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 61vh;
+  background-color: #ffcc80;
+  text-align: center;
+   
+  gap: .5rem;
+}
+  
+ .quantity-btn{
+    display: flex;
+    border: 1px solid black;
+    border-radius: .2rem;
+    width: fit-content;
+    gap: .5rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+ }
+ .quantity-btn button{
+  width:1.5rem;
+  &:hover{
+ background-color: rgba(0, 0, 0, 0.2);
+  }
+ }
+  .total-sec{
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    margin-bottom: 18vh;
+  }
+  .total-sec h3,
+  .total-sec button{
+    width: 30%;
+    text-align: center;
+    padding: .7rem ;
+    border-radius: 1rem;
+    background-color: #ffcc80;
+  }
+  .total-sec button {
+    font-size: large;
+    &:hover{
+      background-color: black;
+       color: whitesmoke;
+    }
+  }
+   
+.no-pizzas{
+  border: 1px solid black;
+  padding: 1rem;
+  background-color: #ffcc80;
+  border-radius: 1rem;
+  text-align: center;
+  width: 70%;
+  margin: 1rem auto;
+}
+.menu-cart{
+  display: flex;
+}
+ 
+.orders-sec{
+  margin-bottom: 89vh;
+
+}
+.orders-link{
+  position: fixed;
+  left: 50%;
+  z-index: 1;
+  
+}
+  .order-empty{
+    border: 1px solid black;
+    margin-bottom: 70vh;
+    margin-top:7vh;
+    background-color:#ffcc80;
+    text-align: center;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .ordered-item{
+    border: 1px solid black;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.5rem;
+    background-color: #ffcc80;
+    width: fit-content;
+    height: auto;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    box-shadow: 2px 2px 2px black;
+  }
+  .ordered-item-container{
+    display: flex;
+    flex-direction: column;
+  }
+   .order-heading{
+    border: 1px solid black;
+    text-align: center;
+    font-weight: bold;
+    background-color: #ffcc80;
+    width: fit-content;
+    padding: .6rem;
+    border-radius: 1rem;
+    margin: 1rem ;
+   }
+   .admin-header{
+    display: flex;
+   }
+   #customize{
+    border: 3px solid #ffcc80;
+    position: absolute;
+   }
+   .customize-container{
+    border: 1px solid #ffcc80;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: calc(33.33% - 10px);
+    margin: 1rem;
+    padding: 1rem;
+    justify-content: space-evenly;
+    gap: 1rem;
+    p{
+      font-size: 1.3rem;
+      line-height: 2;
+      font-weight: bold;
+       
+    }
+   }
+   
+   .crust,.cheese,.sausage,.veggies,.meat{
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+   }
+   
+   .customize-cart{
+font-size: large;
+font-weight: bold;
+padding: .7rem;
+margin: 1rem 0;
+border-radius: 1rem;
+background-color: #ffcc80;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+ 
+&:hover{
+  color: #28a745; 
+  background-color: #d4edda; 
+  border-color: #c3e6cb;
+   
+}
+   }
+   .fixed-cart{
+    position:fixed;
+    z-index: 1;
+    left: 65%;
+   }
+
+ .customize-item{
+  border: 1px solid #ccc;
+  font-weight: bold;
+  line-height: 1.8rem;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #ffcc80;
+  border-radius: 1rem;
+  width: max-content;
+ }
+ .customize-options{
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+ }
+ .customize-menu-item{
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #ccc;
+  border-radius: 1rem;
+  width: max-content;
+
+ }
+  
+ .customize-item-container{
+  display: flex;
+  flex-basis: calc(50% - 10px);
+  margin-left: 7rem;
+  
+ }
+ .customized-container{
+  min-height: 100vh;
+ }
+ .customized-items-container{
+  text-align: center;
+   display: flex;
+   justify-content: center;
+
+ }
+   #inventory {
+    margin-left: 4rem;
+   }
+   .admin-header{
+    text-align: center;
+    background-color: #ffcc80;
+    padding: .5rem;
+    border-radius: 1rem;
+   }
+/* Content Media Query */
+ 
+ /* Responsive styles for larger screens */
+ @media screen and (min-width: 768px) {
+ .user-menu{ 
+  width: 30%;
+  margin: 10px;
+}
+   
+}
+
+ /* Responsive styles for medium screens */
+ @media screen and (max-width: 767px) {
+.user-menu{  
+  width: 45%;
+  margin: 10px;}
+  .user-home-header .delivery-div{
+    display: flex;
+    gap: .4rem;
+    font-size: 1.2rem;
+  }
+  
+  
+}
+
+
+  /* Responsive styles for smaller screens */
+  @media screen and (max-width: 480px) {
+    .user-home-header {
+      border:  1px solid #f7ab39;
+      background-color: #ffcc80;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: .5rem .2rem;
+      max-width: 90%;
+      font-size: 1rem;
+      label{
+    padding-left: .5rem;
+      }
+      .search-input{
+        padding-left: .5rem;
+        outline: none;
+        font-size: 1rem;
+        width: 80%;
+      }
+      .delivery-div{
+        display: flex;
+        gap: .5rem;
+        font-size: 1rem;
+      }
+    }
+    .user-menu {
+      border: 1px solid #ddd;
+      margin: 5px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out;
+    gap:1rem;
+      &:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+         
+      }
+    
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 5px;
+      }
+    
+      p {
+        margin-bottom: 5px;
+      }
+    
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+    }
+  
+  .home-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    .welcome-footer{
+      font-size: .8rem;
+      display: flex;
+      justify-content: start;
+      padding: .5rem .3rem ;
+      max-width:100%;
+    }
+    
+  }
+
+/* AUTH MEDIA QUERY  */
+
+ @media screen and (min-width: 786px) {
+  .welcome-img{
+    width: 100%;
+    height: 65vh;
+  }
+  .header-img-user img{
+    height: auto;
+    width: 100%;
+  }
+  .user-signup-input input{
+    height: 2rem;
+    width: 80vh;
+    border-radius: .5rem;
+    outline: none;
+    padding-left: 10px;
+ }
+ .user-admin{
+  height: 30vh;
+ }
+ 
+ .singup-login-msg{
+  margin-top: 1rem;
+  height: 8vh ;
+  font-size: 1.5rem;
+ }
+ .user-signup-input{
+  height: 50vh;
+ }
+  
+ }
+ 
+  
+  
