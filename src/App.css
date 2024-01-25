@@ -529,6 +529,8 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   
  .customize-item-container{
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-basis: calc(50% - 10px);
   margin-left: 7rem;
   
