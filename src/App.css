@@ -515,7 +515,7 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
+  margin: 1rem auto;
  }
  .customize-menu-item{
   border: 1px solid black;
@@ -529,8 +529,8 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   
  .customize-item-container{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   flex-basis: calc(50% - 10px);
   margin-left: 7rem;
   
