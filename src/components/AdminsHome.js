@@ -195,6 +195,7 @@ let menuName ;
       <header className='admin-header'>
         <h2 style={{ margin:"0 auto"}}>CHEESE-FACTROY  </h2>
         <button onClick={handleAdminLogOut}
+        style={{margin:"1rem",padding:".5rem",backgroundColor:"#ccc",borderRadius:".7rem"}}
         >Log-out</button>
       </header>
        <h3 className='order-heading'  >Quantity Management : </h3>
