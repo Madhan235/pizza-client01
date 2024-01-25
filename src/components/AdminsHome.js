@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import api from '../api'
 import DataContext from '../ContextApi/DataContext';
+import { useNavigate } from 'react-router-dom';
 
 const AdminsHome = () => {
   const {email,crustOptions,sausageOptions,cheeseOptions,veggiesOptions,meatOptions,} = useContext(DataContext);
+
+  const navigate = useNavigate();
 
   const [menuOrders,setMenuorders] = useState([]);
   const handleMenuOrders = (menuOrders)=>{
@@ -180,10 +183,19 @@ let menuName ;
     }
   
   }
+
+  const handleAdminLogOut = () =>{
+    
+    sessionStorage.removeItem("adminMail");
+      navigate("/admins/login");
+  
+  }
   return (
      <main>
       <header className='admin-header'>
         <h2 style={{ margin:"0 auto"}}>CHEESE-FACTROY  </h2>
+        <button onClick={handleAdminLogOut}
+        >Log-out</button>
       </header>
        <h3 className='order-heading'  >Quantity Management : </h3>
       <section className='inventory-container'>  
