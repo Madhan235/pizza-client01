@@ -39,6 +39,16 @@ const [crustOptions,setCrustOptions] = useState([])
 const [pizzaValue,setPizzaValue] = useState("")
 const [afterOrderRefresh,setAfterOrderRefresh] = useState(false);
 
+const [menuOrders,setMenuorders] = useState([]);
+  const handleMenuOrders = (menuOrders)=>{
+   setMenuorders(menuOrders)
+  }
+    const [customizedOrders, setCustomizedOrders] = useState([]);
+    const handleAllCustomizedOrders = (customizedOrders)=>{
+      setCustomizedOrders(customizedOrders);
+    }
+    
+
 const [userOrders,setUserOrders] = useState([]);
 
 const [statusRefresh,setStatusRefresh] = useState(false);
@@ -53,7 +63,7 @@ const [customizeCart,setCustomizeCart] = useState([]);
 
 const [userCustomizedOrders,setUserCustomizedOrders] = useState([]);
 
-const handleCustomizedOrders = (customizedOrders) => {
+const handleUserCustomizedOrders = (customizedOrders) => {
   setUserCustomizedOrders(customizedOrders)
 }
 
@@ -300,9 +310,11 @@ const options = {
 
       }
 
+       
          
        if(verifyPay.status === 200)  {
          
+        
         handleCustomizedQuantity();
 
           cartData = [];
@@ -314,7 +326,7 @@ const options = {
           customizeData = [];
           sessionStorage.setItem('customizeData', JSON.stringify(customizeData));
 
-          setAfterOrderRefresh(!afterOrderRefresh)
+        setStatusRefresh(!refresh);
 
           setTimeout(()=>{
             navigate("/users/orders")
@@ -340,12 +352,18 @@ const options = {
 };
 const rzp = new window.Razorpay(options);
 rzp.open();
+
    }
  
    
   
   const DataValue = {email,setEmail,password,setPassword,error,setError,isloading,setIsLoading,render,setRender,recommendedMenu,setRecommendedMenu,deliveryOption,setDeliveryOption,search,setSearch, vegMenu,setVegMenu,nonVegMenu,setNonVegMenu,allPizzas,setAllPizzas,cart,setCart,handleAddingQuantity,findPizzaQuantity,refresh,setRefresh,handleSubtractingQuantity,removeFromCart,pizzaValue,setPizzaValue,cartTotal,handleOrder,afterOrderRefresh,setAfterOrderRefresh,userOrders,handleSetUserOrders,statusRefresh,setStatusRefresh,crustOptions,setCrustOptions,sausageOptions,setSausageOptions,cheeseOptions,setCheeseOptions,veggiesOptions,setVeggiesOptions,meatOptions,setMeatOptions,
-    customizeCart,setCustomizeCart,userCustomizedOrders,handleCustomizedOrders,quantityRefresh,setQuantityRefresh}
+    customizeCart,setCustomizeCart,userCustomizedOrders,handleUserCustomizedOrders,
+    menuOrders,
+ handleMenuOrders,
+customizedOrders,
+handleAllCustomizedOrders,
+    quantityRefresh,setQuantityRefresh}
 
   return (
     <DataContext.Provider 

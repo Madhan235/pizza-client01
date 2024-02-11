@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom';
  
 const Orders = () => {
     
-    const { userOrders,handleSetUserOrders,statusRefresh,userCustomizedOrders, handleCustomizedOrders} = useContext(DataContext)
+    const { userOrders,handleSetUserOrders,statusRefresh,userCustomizedOrders, handleUserCustomizedOrders} = useContext(DataContext)
 
      
 
     useEffect(()=>{
+        console.log("im refreshing");
         const getOrder = async ()=>{
             try {
                 const userMail = localStorage.getItem('email');
@@ -17,10 +18,12 @@ const Orders = () => {
                 const response = await api.post('users/orders',{email:userMail})
 
                 
-                
                     handleSetUserOrders(response.data.orders ? response.data.orders : []);
 
-                    handleCustomizedOrders(response.data.customizedOrders ? response.data.customizedOrders : []);
+                    handleUserCustomizedOrders(response?.data.customizedOrders);
+
+                    const responseAll = await api.get('admins/allorders')
+                    console.log(responseAll?.data.menuOrders);
                       
             } catch (error) {
                 console.log(error)
@@ -29,7 +32,7 @@ const Orders = () => {
        getOrder();
     },[statusRefresh])
 
- 
+  
 
     if(userOrders && userOrders?.length > 1)
      {var sortedMenuOrders = userOrders.sort((a,b)=>{
@@ -139,7 +142,7 @@ const Orders = () => {
  style={{color:"green",marginTop:"1rem",backgroundColor:"white",
  padding:".5rem", borderRadius:"1rem",fontSize:"1.5rem",textAlign:"center"}}
  >Order-Status :  {item.orderStatus}</p>
-   
+   {console.log(item)}
  </section>
   ))}
   

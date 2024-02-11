@@ -4,19 +4,16 @@ import DataContext from '../ContextApi/DataContext';
 import { useNavigate } from 'react-router-dom';
 
 const AdminsHome = () => {
-  const {email,crustOptions,sausageOptions,cheeseOptions,veggiesOptions,meatOptions,} = useContext(DataContext);
+  const {email,crustOptions,sausageOptions,cheeseOptions,veggiesOptions,meatOptions,menuOrders,
+    handleMenuOrders,
+   customizedOrders,
+   handleAllCustomizedOrders,statusRefresh,setStatusRefresh,quantityRefresh,setQuantityRefresh} = useContext(DataContext);
+
+
 
   const navigate = useNavigate();
 
-  const [menuOrders,setMenuorders] = useState([]);
-  const handleMenuOrders = (menuOrders)=>{
-   setMenuorders(menuOrders)
-  }
-    const [customizedOrders, setCustomizedOrders] = useState([]);
-    const handleCustomizedOrders = (customizedOrders)=>{
-      setCustomizedOrders(customizedOrders);
-    }
-    
+  
     const [crustValue,setCrustValue] = useState(1);
     const [sausageValue,setSausageValue] = useState(1);
     const [cheeseValue,setCheeseValue] = useState(1);
@@ -38,34 +35,40 @@ const AdminsHome = () => {
 var adminMail = JSON.parse(sessionStorage.getItem('adminMail'));
 
 
-const {statusRefresh,setStatusRefresh,afterOrderRefresh,quantityRefresh,setQuantityRefresh} = useContext(DataContext);
+
+
+ 
 
     useEffect(()=>{
       const getAllOrder = async ()=>{
           try {
+            
               const response = await api.get('admins/allorders')
              handleMenuOrders(response?.data.menuOrders);
              
-             handleCustomizedOrders(response?.data.customizedOrders);
+             handleAllCustomizedOrders(response?.data.customizedOrders);
             
                } catch (error) {
               console.log(error)
           }
       }
      getAllOrder();
-  },[statusRefresh,afterOrderRefresh])
+  },[statusRefresh])
 
   useEffect(()=>{
+     
     handleQuantityAlert()
   },[crustName,sausageName,cheeseName,veggiesNames,meatNames])
  
- const filterPendingMenuOrders = menuOrders?.filter((item) => item.OrderStatus !== 'Order Served')
+  var filterPendingMenuOrders =  menuOrders?.filter((item) => item.OrderStatus !== 'Order Served')
 
- const servedMenuOrder = menuOrders?.filter((item) => item.OrderStatus === 'Order Served')
+  var servedMenuOrder = menuOrders?.filter((item) => item.OrderStatus === 'Order Served')
 
- const filterPendingCustomizedOrders = customizedOrders?.filter((item) => item.OrderStatus !== "Order Served" )
+  var filterPendingCustomizedOrders = customizedOrders?.filter((item) => item.OrderStatus !== "Order Served" )
 
- const servedCustomizedOrders = customizedOrders?.filter((item) => item.OrderStatus === "Order Served" )
+  var servedCustomizedOrders = customizedOrders?.filter((item) => item.OrderStatus === "Order Served" )
+
+  
  
   const handleMenuStatusChange = async (value,itemId) => {
     try {
@@ -81,7 +84,7 @@ const {statusRefresh,setStatusRefresh,afterOrderRefresh,quantityRefresh,setQuant
     try {
       console.log(value,itemId)
       const response = await api.post('admins/updatestatus/customized',{newStatus:value,id:itemId});
-       
+
       setStatusRefresh(!statusRefresh);
     } catch (error) {
       console.error(error)
@@ -120,7 +123,7 @@ var meatNames = [];
 
   const handleQuantityAlert = async ()=>{
   
-    console.log("im running");
+     
 
   crustOptions.forEach((item) => {
     if (item.quantity <= 20) {
