@@ -8,7 +8,7 @@ const api = axios.create({
 });
 
  
-https://pizza-server-1grp.onrender.com
+// https://pizza-server-1grp.onrender.com
 
 // export const createItem = (data) => api.post('/items', data);
 // export const getItems = () => api.get('/items');
