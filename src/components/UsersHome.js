@@ -235,8 +235,23 @@ try {
     <>
   <UsersHeader />
   <main>
+
+ 
+  {/* {(!recommendedMenu && !vegMenu && !nonVegMenu) && (
+    <section>
+        <h3 style={{color:"rgb(16, 181, 93)", textAlign:"center" }}>Fetching Data...</h3>
+    </section>
+)} */}
+ 
     {!search ? (<div>
       {/* RECOMMENDED MENU */}
+
+      {(!recommendedMenu && !vegMenu && !nonVegMenu) && (
+    <section>
+        <h3 style={{color:"rgb(16, 181, 93)", textAlign:"center" }}>Fetching Data...</h3>
+    </section>
+)}
+
   <section>
     <div className='menu-cart'>
   <h3 className='menu-heading' id='recommended' >Recommended  </h3>
